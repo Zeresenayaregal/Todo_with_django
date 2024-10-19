@@ -1,0 +1,276 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #2A2A72, #009FFD);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    max-width: 400px;
+    padding: 1em;
+    background: #1e3c72;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0em;
+    padding: 1em;
+    width: 100%;
+    background-color: #000;
+}
+
+
+header:not(:has(.calendar-icon)) {
+    justify-content: flex-start;
+}
+
+header h1 {
+    font-size: 1.2em;
+}
+
+.title1, .title2 {
+    margin-left: 0.5em; 
+    font-size: 1.2em;
+    color: white;
+}
+.calendar-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Date and Time */
+.date-time-section {
+    background: #253983;
+    display: flex;
+    padding: 1em;
+    justify-content: space-around;
+}
+
+.date-time-section .date {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.date-time-section .time {
+    font-size: 2.5em;
+}
+
+.filter-btn2 {
+    scale: 1.5;
+    position: relative;
+    margin-top: 10em;
+    padding: 2em !important;
+    left: 40%;
+}
+
+/* Task Filter */
+.task-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background-color: #fff;
+}
+
+.task-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-btn2 {
+    flex: 1;
+    padding: 0.5em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filter-btn svg, .edit-btn svg, .delete-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #000;
+}
+
+.filter-btn2 svg {
+    width: 40px;
+    height: 40px;
+    stroke: #fff;
+}
+
+
+
+.filter-btn span {
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-btn2 span {
+    font-size: 15px;
+    color: #fff;
+}
+
+
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em;
+}
+
+.task-item {
+    background-color: #fff;
+    color: #000;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 1em;
+}
+
+.task-actions {
+    display: flex;
+    gap: 1em;
+}
+
+
+.cal_svg {
+    display: block;
+    width: 3em;
+}
+
+
+.task-actions .edit-btn, .task-actions .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Add Task Form */
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+::placeholder {
+    color: #fff;
+}
+
+.add-task-form input {
+    padding: 0.8em;
+    outline: none;
+    margin: 2em;
+    border: none;
+    font-size: 1em;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.add-task-form button {
+    background-color: #0c2146;
+    color: white;
+    padding: 0.8em;
+    margin: 0 3em 5em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+}
+
+/* Floating Add Button */
+.add-task-btn {
+    position: fixed;
+    width: 60px;
+    bottom: 20px;
+    height: 60px;
+    background-color: #0c2146;
+    color: white;
+    font-size: 2em;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .page {
+        padding: 0em;
+        min-height: 100vh;
+    }
+
+    .add-task-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 600px) {
+    .page {
+        max-width: 700px;
+        padding: 0em;
+    }
+
+    .add-task-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5em;
+    }
+}
